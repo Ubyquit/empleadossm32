@@ -22,8 +22,8 @@ if ($varsesion == "" || $varsesion == NULL) {
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <script src="https://use.fontawesome.com/5001448291.js"></script>
-    <title>Panel principal</title>
+
+    <title>Creación de usuario</title>
 </head>
 
 <body>
@@ -32,15 +32,30 @@ if ($varsesion == "" || $varsesion == NULL) {
     <!-- Final de navbar -->
 
 
-    <h3>Panel de usuarios</h3>
-
-    <div>
-        <a class="btn btn-primary" href="../acciones/crear_usuarios.php" role="button">Crear usuario</a>
+    <h3>Dar de alta a usuario nuevo</h3>
+    <!-- Inicio de formulario -->
+    <div class="container-lg">
+        <form action="crear_usr_query.php" method="post">
+            <div class="mb-3">
+                <label for="InputEmail1" class="form-label">Correo electronico</label>
+                <input name="email" type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="Inputnombre" class="form-label">Nombres</label>
+                <input name="nombre" type="text" class="form-control" id="Inputnombre" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="Inputapellido1" class="form-label">Apellido paterno</label>
+                <input name="apellido1" type="text" class="form-control" id="Inputapellido1" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="Inputapellido2" class="form-label">Apellido materno</label>
+                <input name="apellido2" type="text" class="form-control" id="Inputapellido2" aria-describedby="emailHelp">
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
     </div>
-
-    <!-- Inicio de tabla -->
-    <?php include "../include/tabla_usuarios.php"; ?>
-    <!-- Final de tabla -->
+    <!-- Final de formulario -->
 
 
 
