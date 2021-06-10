@@ -31,13 +31,19 @@ if ($varsesion == "" || $varsesion == NULL) {
     <?php include "../include/navbar.php"; ?>
     <!-- Final de navbar -->
 
-
+    <div class="container">
     <h3>Panel de usuarios</h3>
-
+    <br>
     <div>
         <a class="btn btn-primary" href="../acciones/crear_usuarios.php" role="button">Crear usuario</a>
     </div>
-
+    <br>
+    <form action="" method="POST" class="d-flex">
+        <input name="search" class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Buscar</button>
+    </form>
+    
+    </div>
     <!-- Inicio de tabla -->
     <?php include "../include/tabla_usuarios.php"; ?>
     <!-- Final de tabla -->

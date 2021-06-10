@@ -15,6 +15,7 @@
         </thead>
         <tbody>
             <?php
+            $buscar = $_POST['search'];
             //consulta mysql para verificar que los datos en la db sean los correctos.
             $consulta = "SELECT
                             empleado.nombre AS nombre_empleado,
@@ -27,7 +28,11 @@
                             `status`
                          FROM
                             empleado
-                            LEFT JOIN departamento ON empleado.codigo_departamento = departamento.codigo";
+                            LEFT JOIN departamento 
+                            ON empleado.codigo_departamento = departamento.codigo
+                            WHERE empleado.nombre LIKE '%$buscar%'
+                            or empleado.apellido1 LIKE '%$buscar%'
+                            or empleado.apellido2 LIKE '%$buscar%'";
            
            //primero realizamos la conexión y despues mandamos la consulta.
             $conexion = mysqli_query($mysqli, $consulta);
